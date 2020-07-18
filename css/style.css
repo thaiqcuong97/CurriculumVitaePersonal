@@ -1,0 +1,24 @@
+.main_container{
+  padding-left: 270px;
+}
+.aside{
+  width: 270px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: red;
+  position: fixed;
+
+}
+.main_contet{
+ 
+}
+.home{
+
+}
+.section{
+  background: #f2f2fc;
+  min-height: 100vh;
+  display: block;
+}
