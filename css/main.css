@@ -1,13 +1,49 @@
-*{
+@import "/modules/fontawesome-free/css/all.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap');
+:root {
+  /*body - light */
+  --body-h-dark: #f2f2fc;
+  --body-m-light: #fdf9ff;
+  --heading: #302e4d;
+  --text: #504e70;
+  --border-dark: #d4d4e3;
+  --border-light: #e8dfec;
+  --copy-text: #7d7d7d;
+  /* body dark */
+  --bg-dark: #151515;
+  --bg-dark-light: #2222;
+  --heading-wh: #fff;
+  --text-gray: #e9e9e9;
+  --light-gray: #e8dfec;
+  /* style skin */
+  --red: #ec1839;
+  --blue: #2196f3;
+  --yellow: #ffb400;
+  --green: #72b626;
+
+  /* blobby */
+  --br-blobby: 49%;
+	--br-blobby-before: 48%;
+	--br-blobby-after: 35%;
+}
+
+* {
   margin: 0;
   padding: 0;
   outline: none;
   text-decoration: none;
   box-sizing: border-box;
 }
-::before,::after{
+::before,
+::after {
   box-sizing: border-box;
 }
-body{
-  
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
+

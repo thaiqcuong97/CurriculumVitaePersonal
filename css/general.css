@@ -1,0 +1,40 @@
+.side_navigation .logo a::before {
+  border-top: 4px solid var(--red);
+  border-left: 4px solid var(--red);
+}
+
+.side_navigation .logo a::after {
+  border-bottom: 4px solid var(--red);
+  border-right: 4px solid var(--red);
+}
+
+.about .about_content .about_text span,
+.side_navigation .nav li .active,
+.side_navigation .nav li a:not(.active):hover,
+.side_navigation .nav-toggler span i {
+  color: var(--red);
+}
+.about .about_content .personal_info .info_item  span,
+.about .about_content .about_text,
+.side_navigation .logo a,
+.side_navigation .nav li a,
+.section_title h2,
+.intro .control_introduce  {
+  color: var(--heading);
+}
+.section_title h2::after,
+.section_title h2::before,
+.intro .social_link a
+{
+  background: var(--red);
+}
+
+.padd-15{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.flex_b {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
