@@ -49,3 +49,6 @@ body {
   font-weight: 400;
   text-decoration: none;
 }
+li {
+  list-style: none;
+}

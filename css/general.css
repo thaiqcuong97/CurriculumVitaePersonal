@@ -14,22 +14,25 @@
 .side_navigation .nav-toggler span i {
   color: var(--red);
 }
-.about .about_content .personal_info .info_item  span,
+.about .about_content .personal_info .info_item span,
 .about .about_content .about_text,
 .side_navigation .logo a,
 .side_navigation .nav li a,
 .section_title h2,
-.intro .control_introduce  {
+.intro .control_introduce {
   color: var(--heading);
 }
+.education .timeline .timeline_item .circle_dot,
+.experience .timeline .timeline_item .circle_dot,
+.education .timeline .timeline_item::before,
+.experience .timeline .timeline_item::before,
 .section_title h2::after,
 .section_title h2::before,
-.intro .social_link a
-{
+.intro .social_link a {
   background: var(--red);
 }
 
-.padd-15{
+.padd-15 {
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -37,4 +40,12 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.education,
+.experience {
+  flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
+  max-width: 50%;
+  margin-top: 30px;
 }
