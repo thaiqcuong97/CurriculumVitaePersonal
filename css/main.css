@@ -1,6 +1,7 @@
 @import "/modules/fontawesome-free/css/all.css";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
 :root {
   /*body - light */
   --body-h-dark: #f2f2fc;
@@ -24,8 +25,9 @@
 
   /* blobby */
   --br-blobby: 49%;
-	--br-blobby-before: 48%;
-	--br-blobby-after: 35%;
+  --br-blobby-before: 48%;
+  --br-blobby-after: 35%;
+
 }
 
 * {
@@ -43,7 +45,7 @@ body {
   margin: 0;
   line-height: 1.5;
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
+  text-decoration: none;
 }
-
