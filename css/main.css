@@ -11,6 +11,7 @@
   --border-dark: #d4d4e3;
   --border-light: #e8dfec;
   --copy-text: #7d7d7d;
+  --timeline-dark: #595959;
   /* body dark */
   --bg-dark: #151515;
   --bg-dark-light: #2222;
@@ -19,9 +20,15 @@
   --light-gray: #e8dfec;
   /* style skin */
   --red: #ec1839;
-  --blue: #2196f3;
-  --yellow: #ffb400;
+  --blue: #346ee4;
+  --glare-blue:#61dafb;
+  --blue-purple:#620ad8;
+  --yellow: #fd4;
   --green: #72b626;
+  --darkorange-pale: #ff8c00;
+  --darkorange-dark:#e44e32;
+  --violet-bt:#6b59b7;
+  --violet-rd:#785cbc;
 
   /* blobby */
   --br-blobby: 49%;

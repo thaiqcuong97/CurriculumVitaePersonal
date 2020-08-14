@@ -293,6 +293,7 @@
   margin-bottom: 20px;
   position: relative;
   z-index: 100;
+  object-fit: contain;
 }
 
 /* button nina download cv */
@@ -437,6 +438,7 @@
 
 .signal img {
   transform: rotate(33deg);
+  object-fit: contain;
 }
 .flex_b {
   display: flex;
@@ -480,6 +482,7 @@
   margin-bottom: 6px;
 }
 .email_item img {
+  object-fit: contain;
   width: 35px !important;
   height: 35px !important;
   opacity: 0.4;
@@ -707,14 +710,207 @@
 /*------End About me-------*/
 
 /* Skills */
-.skills .skill_content {
-  -ms-flex: 0 0 100%;
+.skill_content {
   flex: 0 0 100%;
   max-width: 100%;
 }
-.skills .skill_content .skill_text {
-  -ms-flex: 0 0 100%;
+.skill_timeline {
+  position: relative;
   flex: 0 0 100%;
   max-width: 100%;
-  text-align: center;
 }
+.skill_timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 3px;
+  top: 22px;
+  height: 86%;
+  background: var(--bg-dark-light);
+}
+.skill_timeline ul {
+  margin: 0;
+  padding: 0;
+}
+.skill_timeline ul li {
+  list-style: none;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+.skill_timeline ul li:nth-child(odd){
+  padding: 14px 30px 10px 72px;
+}
+.skill_timeline ul li:nth-child(even){
+  padding: 14px 70px 10px 33px;
+}
+.skill_timeline ul li:nth-child(odd),
+.skill_timeline ul li:nth-child(even) {
+  clear: both;
+  margin-bottom: 100px;
+}
+.skill_timeline ul li:nth-child(odd) {
+  float: left;
+  text-align: right;
+}
+.skill_timeline ul li:nth-child(even) {
+  float: right;
+  text-align: left;
+}
+.skill_timeline ul li:nth-child(odd) .skill_timeline_dot::before,
+.skill_timeline ul li:nth-child(even) .skill_timeline_dot::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: var(--timeline-dark);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.skill_timeline ul li:nth-child(odd) .skill_timeline_dot::before {
+  right: -19px;
+  top: 12px;
+}
+.skill_timeline ul li:nth-child(even) .skill_timeline_dot::before {
+  left: -16px;
+  top: 12px;
+}
+.skill_timeline .skill_timeline_container:hover .html::before {
+  background: var(--darkorange-dark);
+}
+.skill_timeline .skill_timeline_container:hover .css::before {
+  background: var(--blue);
+}
+.skill_timeline .skill_timeline_container:hover .bootstrap::before {
+  background: var(--violet-bt);
+}
+.skill_timeline .skill_timeline_container:hover .javascript::before {
+  background: var(--yellow);
+}
+.skill_timeline .skill_timeline_container:hover .reactjs::before {
+  background: var(--glare-blue);
+}
+.skill_timeline .skill_timeline_container:hover .redux::before {
+  background: var(--violet-rd);
+}
+.skill_timeline .skill_timeline_container:hover .git::before {
+  background: var(--bg-dark);
+}
+.skill_timeline .skill_timeline_container:hover .unbuntu::before {
+  background: var(--darkorange-dark);
+}
+.skill_timeline ul li:nth-child(odd) .skill_timeline_icon img,
+.skill_timeline ul li:nth-child(even) .skill_timeline_icon img {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  object-fit: fill;
+}
+.skill_timeline ul li:nth-child(odd) .skill_timeline_icon img {
+  right: -11px;
+  top: 21px;
+}
+.skill_timeline ul li:nth-child(even) .skill_timeline_icon img {
+  left: -8px;
+  top: 20px;
+}
+.skill_timeline ul li:nth-child(odd) .skill_timeline_content{
+  position: relative;
+  background: var(--heading-wh);
+  padding: 6px 20px;
+  border-radius: 5px;
+  text-align: left;
+  box-shadow: 0 3px 0 var(--border-dark);
+}
+.skill_timeline ul li:nth-child(even) .skill_timeline_content{
+  position: relative;
+  text-align: left;
+  background: var(--heading-wh);
+  padding: 6px 20px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  box-shadow: 0 3px 0 var(--border-dark);
+}
+.skill_timeline ul li:nth-child(odd) .skill_timeline_content:after {
+  left: 99%;
+  top: 22px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-left-color: #fff;
+  border-width: 10px;
+  margin-top: -17px;
+}
+.skill_timeline ul li:nth-child(even) .skill_timeline_content:after {
+  right: 99%;
+  top: 22px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-right-color: #fff;
+  border-width: 10px;
+  margin-top: -17px;
+}
+.skill_timeline .skill_timeline_content p{
+  color: var(--text);
+}
+.skill_timeline ul li:nth-child(odd) .skill_timeline_box {
+  position: absolute;
+  top: 20px;
+  right: -190px;
+}
+.skill_timeline ul li:nth-child(even) .skill_timeline_box {
+  position: absolute;
+  top: 20px;
+  left: -190px;
+}
+.skill_timeline_box {
+  width: 120px;
+  height: 120px;
+  margin-top: 6px;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: var(--heading-wh);
+  position: relative;
+  transition: all 0.3s ease-in;
+}
+.skill_timeline_box img {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 28px;
+  top: 28px;
+  object-fit: contain;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+}
+.skill_timeline_box:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.skill_timeline_box:hover img {
+  transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  -o-transform: scale(1.15);
+}
+/*----------------End Skills-------------------*/

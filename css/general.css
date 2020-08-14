@@ -14,6 +14,7 @@
 .side_navigation .nav-toggler span i {
   color: var(--red);
 }
+.skill_timeline .skill_timeline_content h3,
 .about .about_content .personal_info .info_item span,
 .about .about_content .about_text,
 .side_navigation .logo a,
@@ -31,7 +32,6 @@
 .intro .social_link a {
   background: var(--red);
 }
-
 .padd-15 {
   padding-left: 15px;
   padding-right: 15px;
