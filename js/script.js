@@ -1,9 +1,5 @@
-/* audio */
-window.onload = function () {
-  document.getElementById("my_audio").play();
-};
 
-/* text greeting name */
+/* Home Text greeting name */
 GreetingAndName(
   [
     "Hello,",
@@ -83,10 +79,38 @@ function getRandomValue() {
 	return Math.floor(Math.random() * 50) + 20;
 }
 
-/* */
+/* Project item filter */
+
+const filterContainer = document.querySelector(".project_filer"),
+      filterBtns = filterContainer.children,
+      totalFilterBtn =filterBtns.length,
+      projectItems = document.querySelectorAll(".products"),
+      totalProjectItem = projectItems.length;
+      console.log(totalProjectItem)
 
 
-/* Acitve Button Side Navigation */
+      function FilterButton(){
+        for(let i = 0; i< totalFilterBtn; i++){
+          filterBtns[i].addEventListener("click",function(){
+            filterContainer.querySelector(".active").classList.remove("active");
+            this.classList.add("active");
 
-// let sideNav = document.getElementsByClassName('nav');
-// let btnSideNav = document.getElementsByClassName('active')
+            const filterValue = this.getAttribute("data-filter");
+
+            for(let j = 0; j < totalProjectItem; j++){
+              if(filterValue === projectItems[j].getAttribute("data-category")){
+                projectItems[j].classList.remove("hide");
+                projectItems[j].classList.add("show");
+              }else{
+                projectItems[j].classList.remove("show");
+                projectItems[j].classList.add("hide");
+              }
+              if(filterValue === "all"){
+                projectItems[j].classList.remove("hide");
+                projectItems[j].classList.add("show");
+              }
+            }
+          })
+        }
+      }
+      FilterButton()
