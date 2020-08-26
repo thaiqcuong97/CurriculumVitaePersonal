@@ -57,8 +57,9 @@ function GreetingAndName(words, id, colors) {
     }
   }, 400);
 }
-
-/* animation blobby */
+/* Home Text greeting name End*/
+/*------------------------------------*/
+/* Animation blobby */
 const box = document.querySelector(".box");
 
 setInterval(setBorderRadius, 400);
@@ -76,6 +77,8 @@ function generateBorderRadiusValue() {
 function getRandomValue() {
   return Math.floor(Math.random() * 50) + 20;
 }
+/* Animation blobby End*/
+/*------------------------------------*/
 
 /* Project item filter */
 function FilterButton() {
@@ -112,15 +115,116 @@ FilterButton();
 /* Project item filter End*/
 /*------------------------------------*/
 
-var sendButton = function() {
-  var button = $('.sendButton');
-  console.log(button);
-  button.on('click', function() {
-    $(this).hide().html('Sending <span class="loading"></span>').fadeIn('fast');
-    setTimeout( function() {
-      button.hide().html('Message sent &#10003;').fadeIn('fast');
-    }, 3000);
-  });
-};
-sendButton();
-    
+/*Concat form*/
+(function () {
+  // get all data in form and return object
+  function getFormData(form) {
+    let elements = form.elements,
+      honeypot;
+
+    let fields = Object.keys(elements)
+      .filter(function (k) {
+        if (elements[k].name === "honeypot") {
+          honeypot = elements[k].value;
+          return false;
+        }
+        return true;
+      })
+      .map(function (k) {
+        if (elements[k].name !== undefined) {
+          return elements[k].name;
+          // special case for Edge's html collection
+        } else if (elements[k].length > 0) {
+          return elements[k].item(0).name;
+        }
+      })
+      .filter(function (item, pos, self) {
+        return self.indexOf(item) == pos && item;
+      });
+
+    let formData = {};
+    fields.forEach(function (name) {
+      let element = elements[name];
+      // singular form elements just have one value
+      formData[name] = element.value;
+
+      // when our element has multiple items, get their values
+      if (element.length) {
+        let data = [];
+        for (let i = 0; i < element.length; i++) {
+          let item = element.item(i);
+          if (item.checked || item.selected) {
+            data.push(item.value);
+          }
+        }
+        formData[name] = data.join(", ");
+      }
+    });
+
+    // add form-specific values into the data
+    formData.formDataNameOrder = JSON.stringify(fields);
+    formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+    formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+
+    return { data: formData, honeypot: honeypot };
+  }
+
+  function handleFormSubmit(event) {
+    // handles form submit without any jquery
+    event.preventDefault(); // we are submitting via xhr below
+    let form = event.target,
+      formData = getFormData(form),
+      data = formData.data;
+
+    // If a honeypot field is filled, assume it was done so by a spam bot.
+    if (formData.honeypot) {
+      return false;
+    }
+
+    disableAllButtons(form);
+    let url = form.action,
+      xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
+    // xhr.withCredentials = true;
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        form.reset();
+        let formElements = form.querySelector(".form-elements");
+        if (formElements) {
+          formElements.style.display = "none"; // hide form
+        }
+        let thankYouMessage = form.querySelector(".thank_message");
+        if (thankYouMessage) {
+          thankYouMessage.style.display = "block";
+        }
+      }
+    };
+    // url encode form data for sending as post data
+    let encoded = Object.keys(data)
+      .map(function (k) {
+        return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+      })
+      .join("&");
+    xhr.send(encoded);
+  }
+
+  function loaded() {
+    // bind to the submit event of our form
+    let forms = document.querySelectorAll("form.contact_form"); //Get all the forms having class="contact_form" in the form tag
+
+    for (let i = 0; i < forms.length; i++) {
+      forms[i].addEventListener("submit", handleFormSubmit, false);
+    }
+  }
+  document.addEventListener("DOMContentLoaded", loaded, false);
+
+  function disableAllButtons(form) {
+    let buttons = form.querySelectorAll("button");
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].disabled = true;
+    }
+  }
+})();
+
+/*Concat form End*/
