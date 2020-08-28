@@ -6,48 +6,57 @@
 
     <title>Curriculum Vitae Personal</title>
 
-    <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/general.css" />
-    <link rel="stylesheet" href="/css/responsive.css">
-    <!--Js-->
-    <link rel="stylesheet" href="/js/script.js" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="/css/styleSwitcher.css" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" class="alternate_style" title="red" href="/css/red.css" />
+    <link rel="stylesheet" class="alternate_style" title="blue"  href="/css/blue.css" disabled/>
+    <link rel="stylesheet" class="alternate_style" title="orange"  href="/css/orange.css" disabled/>
+    <link rel="stylesheet" class="alternate_style" title="yellow"  href="/css/yellow.css" disabled/>
+    <link rel="stylesheet" class="alternate_style" title="green"  href="/css/green.css" disabled/> 
   </head>
   <body>
+    <!--Loading-->
+    <div class="preloader">
+      <div class="loader">
+      </div>
+    </div>
+    <!-------Loading End----->
+
     <!--Main Container-->
     <div class="main_container">
       <!--Side Navigation-->
       <div class="side_navigation">
-        <!--Logo-->
-        <div class="logo">
-          <a href="#">CuongFE </a>
-        </div>
-        <!------End Logo-------->
         <!--Nav Toggler-->
         <div class="nav-toggler">
-          <span><i class="fas fa-bars"></i></span>
+          <span></span>
+        </div>        
+        <div class="nav_inner">
+          <!--Logo-->
+          <div class="logo">
+            <a href="#">CuongFE</a>
+          </div>
+          <!------End Logo-------->
+          <!--Nav-->
+            <ul class="nav">
+              <li><a class="active" href="#home"><i class="fas fa-home"></i>Home</a></li>
+              <li><a href="#about"><i class="fas fa-user"></i>About Me</a></li>
+              <li><a href="#skill"><i class="fas fa-list"></i>Skills</a> </li>
+              <li><a href="#project"><i class="fas fa-briefcase"></i>Projects</a></li>
+              <li><a href="#contact"><i class="fas fa-comments"></i>Contact</a> </li>
+            </ul>
+          <!--Copy Right Text-->
+          <div class="copy_right_text">&copy; 2020 My Personal Resume.</div>
+          <!----------End Nav---------->
         </div>
-        <!--Nav-->
-        <div class="nav">
-          <ul>
-            <li>
-              <a class="active" href="#"><i class="fas fa-home"></i>Home</a>
-              <a href="#"><i class="fas fa-user"></i>About Me</a>
-              <a href="#"><i class="fas fa-list"></i>Skills</a>
-              <a href="#"><i class="fas fa-briefcase"></i>Projects</a>
-              <a href="#"><i class="fas fa-comments"></i>Contact</a>
-            </li>
-          </ul>
-        </div>
-        <!--Copy Right Text-->
-        <div class="copy_right_text">&copy; 2020 My Personal Resume.</div>
-        <!----------End Nav---------->
       </div>
       <!--Side Navigation-->
       <!--Main Content-->
       <div class="main_content">
         <!--Home section-->
-        <section class="home section">
+        <section class="home section active" id="home">
           <div class="container">
             <div class="intro">
               <img src="/image/avatar.jpg" alt="" srcset="" />
@@ -56,10 +65,18 @@
                 <span class="control_underscore" id="control">&#95;</span>
               </div>
               <div class="social_link">
-                <a href="https://www.facebook.com/thai.q.cuong/"><i class="fab fa-facebook-square"></i></a>
-                <a href="https://www.instagram.com/thaiqcuong/"><i class="fab fa-instagram-square"></i></a>
-                <a href="skype:live:f38482ab3292222f?chat"><i class="fab fa-skype"></i></a>
-                <a href="https://github.com/thaiqcuong97"><i class="fab fa-github-square"></i></a>
+                <a href="https://www.facebook.com/thai.q.cuong/"
+                  ><i class="fab fa-facebook-square"></i
+                ></a>
+                <a href="https://www.instagram.com/thaiqcuong/"
+                  ><i class="fab fa-instagram-square"></i
+                ></a>
+                <a href="skype:live:f38482ab3292222f?chat"
+                  ><i class="fab fa-skype"></i
+                ></a>
+                <a href="https://github.com/thaiqcuong97"
+                  ><i class="fab fa-github-square"></i
+                ></a>
                 <a href=""><i class="fab fa-slack"></i></a>
               </div>
             </div>
@@ -68,7 +85,7 @@
         <!-----------Home section End----------->
 
         <!-- About Me-->
-        <section class="about section ">
+        <section class="about section " id="about">
           <div class="container">
             <div class="row">
               <div class="section_title padd-15">
@@ -117,40 +134,41 @@
                     </div>
                   </div>
                 </div>
-
                 <!--Personal info-->
                 <div class="row">
-                  <div class="personal_info">
-                    <div class="info_item flex_b">
-                      <div class="phone_item">
-                        <img src="/image/icon/phone.svg" alt="" />
+                  <div class="personal_info padd-15">
+                    <div class="row center">
+                      <div class="info_item flex_b">
+                        <div class="phone_item">
+                          <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="signal">
+                          <img src="/image/icon/noun_signal.svg" alt="" />
+                        </div>
+                        <span>Phone: +84-935224473</span>
                       </div>
-                      <div class="signal">
-                        <img src="/image/icon/noun_signal.svg" alt="" />
+                      <div class="info_item flex_b">
+                        <div class="email_item">
+                          <i class="far fa-envelope"></i>
+                          <div class="box"></div>
+                        </div>
+                        <span>Email: thai.q.cuong97@gmail.com</span>
                       </div>
-                      <span>Phone: +84-935224473</span>
+                      <div class="info_item flex_b">
+                        <div class="address_item">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <div class="pulse"></div>
+                        </div>
+                        <span>
+                          Address: Hoa Lien 3, Hoa Vang district, Da Nang City
+                        </span>
+                      </div>
                     </div>
-                    <div class="info_item flex_b">
-                      <div class="email_item">
-                        <img src="/image/icon/email.svg" alt="" />
-                        <div class="box"></div>
-                      </div>
-                      <span>Email: thai.q.cuong97@gmail.com</span>
-                    </div>
-                    <div class="info_item flex_b">
-                      <div class="address_item">
-                        <img src="/image/icon/adress.svg" alt="" />
-                        <div class="pulse"></div>
-                      </div>
-                      <span>
-                        Address: Hoa Lien 3, Hoa Vang district, Da Nang City
-                      </span>
                     </div>
                   </div>
                 </div>
-
                 <!--My Resume-->
-                <div class="row">
+                <div class="row padd-15">
                   <div class="education padd-15">
                     <h3 class="title">My Education</h3>
                     <div class="row padd-15">
@@ -212,7 +230,7 @@
         <!---------------About Me End------------->
 
         <!-- Skills Me-->
-        <section class="skill section ">
+        <section class="skill section " id="skill">
           <div class="container">
             <div class="row">
               <div class="section_title padd-15">
@@ -392,9 +410,9 @@
           </div>
         </section>
         <!---------Skills Me End-------->
-
+ 
         <!-- Project-->
-        <section class="project section ">
+        <section class="project section " id="project">
           <div class="container">
             <div class="row">
               <div class="section_title padd-15">
@@ -409,10 +427,10 @@
                 <button type="button" data-filter="web_design">
                   Website Design
                 </button>
-                <button type="button" data-filter="wordpress">Wordpress</button>
                 <button type="button" data-filter="logo_design">
                   Logo Design
                 </button>
+                <button type="button" data-filter="wordpress">Wordpress</button>
                 <button type="button" data-filter="photography">
                   Photography
                 </button>
@@ -606,7 +624,7 @@
         <!-------------Project End--------->
 
         <!--Contact-->
-        <section class="contact section ">
+        <section class="contact section" id="contact">
           <div class="mapouter">
             <div class="gmap_canvas">
               <iframe
@@ -626,12 +644,12 @@
               <div class="header">
                 <h1>Contact</h1>
               </div>
-              <form 
+              <form
                 class="contact_form"
                 action="https://script.google.com/macros/s/AKfycbzfUq5V6fPbGkfiAu4dDF7uuskKUwanRN1SXLGhlw/exec"
                 method="post"
               >
-                <div class="form-elements" >
+                <div class="form-elements">
                   <input
                     type="text"
                     name="user_name"
@@ -653,8 +671,11 @@
                     <i class="fa fa-paper-plane"></i>&nbsp;Send
                   </button>
                 </div>
-                <div class="thank_message"  >
-                  <span>Thank you for contacting me!<br>I will get back to you as soon as possible.</span>
+                <div class="thank_message">
+                  <span
+                    >Thank you for contacting me!<br />I will get back to you as
+                    soon as possible.</span
+                  >
                 </div>
               </form>
             </div>
@@ -665,7 +686,35 @@
       <!-----------Main Content End----------->
     </div>
     <!---------Main Container End--------->
+
+    <!--Live style switcher-->
+    <div class="style_switcher">
+      <div class="toggle_style_switcher">
+        <i class="fa fa-cog fa-spin"></i>
+      </div>
+      <h4>
+        Style Switcher
+      </h4>
+      <ul>
+        <li><a href="#" title="red" style="background: var(--red);" onclick="setActiveStyle('red')"></a></li>
+        <li><a href="#" title="blue" style="background: var(--blue);" onclick="setActiveStyle('blue')"></a></li>
+        <li><a href="#" title="orange" style="background: var( --darkorange-dark);" onclick="setActiveStyle('orange')"></a></li>
+        <li><a href="#" title="yellow" style="background: var(--yellow);" onclick="setActiveStyle('yellow')"></a></li>
+        <li><a href="#" title="green" style="background: var(--green);" onclick="setActiveStyle('green')"></a></li>
+      </ul>
+      <label>
+        <input type="radio" class="body_bg" name="body-style" value="light" checked=>
+        Light
+      </label>
+      <label >
+        <input type="radio" class="body_bg" name="body-style" value="dark">
+        Dark
+      </label>
+    </div>
+    <!--Live style switcher End-->
+
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+    <script type="text/javascript" src="/js/styleSwitcher.js"></script>
   </body>
-  <script type="text/javascript" src="/js/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/script.js"></script>
 </html>

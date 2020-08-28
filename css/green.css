@@ -1,0 +1,40 @@
+.side_navigation .logo a::before {
+  border-top: 4px solid var(--green);
+  border-left: 4px solid var(--green);
+}
+
+.side_navigation .logo a::after {
+  border-bottom: 4px solid var(--green);
+  border-right: 4px solid var(--green);
+}
+.btn_nina:hover > span,
+.address_item i,
+.phone_item i,
+.email_item i,
+.btn_nina,
+.project .project_filer button.active,
+.about .about_content .about_text span,
+.side_navigation .nav li .active,
+.side_navigation .nav li a:not(.active):hover,
+.side_navigation .nav-toggler span i {
+  color: var(--green);
+}
+.project .project_filer button.active {
+  border-color: var(--green);
+}
+.contact .contact_container .contact_content .contact_form .send_btn,
+.education .timeline .timeline_item .circle_dot,
+.experience .timeline .timeline_item .circle_dot,
+.education .timeline .timeline_item::before,
+.experience .timeline .timeline_item::before,
+.side_navigation .nav-toggler span,
+.side_navigation .nav-toggler span::before,
+.side_navigation .nav-toggler span::after,
+.section_title h2::after,
+.section_title h2::before,
+.intro .social_link a {
+  background: var(--green);
+}
+.btn {
+  border: 1px solid var(--green);
+}

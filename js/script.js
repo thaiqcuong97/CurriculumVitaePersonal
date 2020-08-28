@@ -1,9 +1,71 @@
+/* Loader page */
+window.addEventListener("load",function(){
+  document.querySelector(".preloader").classList.add("opacity-0");
+  setTimeout(()=>{
+    document.querySelector(".preloader").style.display = "none";
+  },2000)
+})
+/* Loader page End*/
+
+/* side navigation */
+let nav = document.querySelector(".nav"),
+navList = nav.querySelectorAll("li"),
+totalNavList = navList.length,
+allSection = document.querySelectorAll(".section"),
+totalAllSection = allSection.length;
+
+function SideNav() {
+  for (let i = 0; i < totalNavList; i++) {
+    let a = navList[i].querySelector("a");
+    a.addEventListener("click", function () {
+      for (let i = 0; i < totalAllSection; i++) {
+        allSection[i].classList.remove("back_section");
+      }
+      for (let j = 0; j < totalNavList; j++) {
+        if(navList[j].querySelector("a").classList.contains("active")){
+          allSection[j].classList.add("back_section");
+        }
+        navList[j].querySelector("a").classList.remove("active");
+      }
+      this.classList.add("active");
+      showSection(this);
+
+      if(window.innerWidth < 1000){
+        sideNaviSectionToggleBtn();
+      }
+    });
+  }
+}
+SideNav();
+
+function showSection(element){
+  for (let i = 0; i < totalAllSection; i++) {
+    allSection[i].classList.remove("active");
+  }
+  let target = element.getAttribute("href").split("#")[1];
+  document.querySelector("#"+target).classList.add("active")
+      console.log(target)
+}
+/* side navigation End*/
+//----------------------------------------
+/* nav-toggler */
+let navToggleBtn = document.querySelector(".nav-toggler"),
+    sideNavi = document.querySelector(".side_navigation");
+
+    navToggleBtn.addEventListener("click",sideNaviSectionToggleBtn)
+  function sideNaviSectionToggleBtn(){
+    navToggleBtn.classList.toggle("open");
+    sideNavi.classList.toggle("open");
+    for (let i = 0; i < totalAllSection; i++) {
+      allSection[i].classList.toggle("open");
+    }
+  }
 /* Home Text greeting name */
 GreetingAndName(
   [
     "Hello,",
     "Welcome to my CV",
-    " My name is Thai Quoc Cuong.",
+    " My name is Quoc Cuong.",
     "I'm a Frontend Developer.",
   ],
   "text",
