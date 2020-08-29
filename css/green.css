@@ -15,7 +15,7 @@
 .project .project_filer button.active,
 .about .about_content .about_text span,
 .side_navigation .nav li .active,
-.side_navigation .nav li a:not(.active):hover,
+.side_navigation .nav li:not(.active):hover a,
 .side_navigation .nav-toggler span i {
   color: var(--green);
 }
