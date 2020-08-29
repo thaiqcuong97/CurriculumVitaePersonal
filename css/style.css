@@ -2,7 +2,7 @@
 @import "/fontawesome/css/fontawesome.css";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&display=swap");
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900");
 :root {
   /*body - light */
   --body-h-dark: #f2f2fc;
@@ -22,21 +22,18 @@
   /* style skin */
   --red: #ec1839;
   --blue: #346ee4;
-  --glare-blue:#61dafb;
-  --blue-purple:#620ad8;
+  --glare-blue: #61dafb;
+  --blue-purple: #620ad8;
   --yellow: #fd4;
   --green: #19aa19;
   --darkorange-pale: #ff8c00;
-  --darkorange-dark:#e44e32;
-  --violet-bt:#6b59b7;
-  --violet-rd:#785cbc;
+  --darkorange-dark: #e44e32;
+  --violet-bt: #6b59b7;
+  --violet-rd: #785cbc;
   /* blobby */
   --br-blobby: 49%;
   --br-blobby-before: 48%;
   --br-blobby-after: 35%;
-
-
-
 }
 
 * {
@@ -83,7 +80,7 @@ li {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
 }
-.preloader.opacity-0{
+.preloader.opacity-0 {
   opacity: 0;
 }
 .preloader .loader {
@@ -102,7 +99,7 @@ li {
   animation: spin 2s linear infinite;
   -webkit-animation: spin 2s linear infinite;
 }
-.preloader .loader::after{
+.preloader .loader::after {
   content: "";
   position: absolute;
   left: 1px;
@@ -120,21 +117,21 @@ li {
   animation: spin 0.8s linear infinite;
   -webkit-animation: spin 0.8s linear infinite;
 }
-@keyframes spin{
-  0%{
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
-}
-100%{
-  transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-}
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
 }
 /*Loading End*/
 .side_navigation {
@@ -152,7 +149,7 @@ li {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
-.side_navigation .nav_inner{
+.side_navigation .nav_inner {
   position: absolute;
   left: 0;
   top: 0;
@@ -303,7 +300,9 @@ li {
 .side_navigation .nav li:not(.active):hover {
   padding-left: 5px;
 }
-
+.side_navigation .nav li a {
+  padding: 12px 90px 12px 0;
+}
 .side_navigation .nav a i {
   padding-right: 8px;
 }
